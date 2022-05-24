@@ -17,7 +17,7 @@ myButton.addEventListener('click', function () {
     const generatedNumbers = [];
 
     for (let i = 0; i < myInput.value; i++) {
-        let randomNumber = Math.floor(Math.random() * 100);
+        let randomNumber = Math.floor(Math.random() * 10);
 
         if (i % 2 !== 0){
             documentOutput.innerHTML += `<li class="list-group-item list-group-item-success"><strong>Index: ${i} - ${randomNumber}</strong></li>`;
