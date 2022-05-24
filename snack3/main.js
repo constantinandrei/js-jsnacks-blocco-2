@@ -20,13 +20,20 @@ myButton.addEventListener('click', function () {
 
     for (let i = 0; i < myInput.value; i++) {
         let randomNumber = Math.floor(Math.random() * 100);
-        documentOutput.innerHTML += `<li>${randomNumber}</li>`;
-        generatedNumbers.push(randomNumber);
+
+        if (i % 2 !== 0){
+            documentOutput.innerHTML += `<li><strong>Index: ${i} - ${randomNumber}</strong></li>`;
+            generatedNumbers.push(randomNumber);
+        } else {
+            documentOutput.innerHTML += `<li>Index: ${i} - ${randomNumber}</li>`;
+            generatedNumbers.push(randomNumber);
+        }
+        
     }
 
     let finalSum = 0;
 
-    for (let i = 0; i < generatedNumbers.length; i++) {
+    for (let i = 1; i < generatedNumbers.length; i+=2) {
         finalSum += generatedNumbers[i];
     }
 
