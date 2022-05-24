@@ -9,12 +9,10 @@ const myDiv = document.getElementById('my-div');
 const myInput = document.getElementById('floatingInput');
 const myButton = document.querySelector('#my-div .btn');
 const documentOutput = document.querySelector('#my-div ul');
-const documentSomma = document.getElementById('somma');
 
 
 myButton.addEventListener('click', function () {
     documentOutput.innerHTML = '';
-    documentSomma.innerHTML = '';
 
     const generatedNumbers = [];
 
@@ -22,10 +20,10 @@ myButton.addEventListener('click', function () {
         let randomNumber = Math.floor(Math.random() * 100);
 
         if (i % 2 !== 0){
-            documentOutput.innerHTML += `<li><strong>Index: ${i} - ${randomNumber}</strong></li>`;
+            documentOutput.innerHTML += `<li class="list-group-item list-group-item-success"><strong>Index: ${i} - ${randomNumber}</strong></li>`;
             generatedNumbers.push(randomNumber);
         } else {
-            documentOutput.innerHTML += `<li>Index: ${i} - ${randomNumber}</li>`;
+            documentOutput.innerHTML += `<li class="list-group-item">Index: ${i} - ${randomNumber}</li>`;
             generatedNumbers.push(randomNumber);
         }
         
@@ -37,6 +35,6 @@ myButton.addEventListener('click', function () {
         finalSum += generatedNumbers[i];
     }
 
-    documentSomma.innerHTML = `<strong>${finalSum}</strong>`;
+    documentOutput.innerHTML += `<li class="list-group-item list-group-item-info"><strong>Totale - ${finalSum}</strong></li>`;
 })
 
