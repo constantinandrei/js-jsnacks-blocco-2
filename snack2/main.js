@@ -13,12 +13,21 @@ const documentOutput = document.querySelector('#my-div ul');
 const cognomi = ['Rossi', 'Neri', 'Carbonara', 'Biestra', 'Olivieri', 'Rubino', 'Reino', 'Squarcini', 'Iozzelli'];
 const nomi = ['Andrea', 'Giulia', 'Fabio', 'Pippo', 'Pluto', 'Tizio', 'Caio', 'Sempronio', 'Francesco', 'Francesca', 'Maria', 'Benedetta']
 
+const invitatiGenerati = [];
+
 myButton.addEventListener('click', function () {
     documentOutput.innerHTML = '';
     for (let i = 0; i < myInput.value; i++) {
         let randomIndexCognomi = Math.floor(Math.random() * cognomi.length);
         let randomIndexNomi = Math.floor(Math.random() * nomi.length);
-        documentOutput.innerHTML += `<li>${nomi[randomIndexNomi]} ${cognomi[randomIndexCognomi]}</li>`;
+        let invitato = nomi[randomIndexNomi] + ' ' + cognomi[randomIndexCognomi];
+        let indexInvitato = invitatiGenerati.indexOf(invitato);
+        if (indexInvitato === -1 ) {
+            documentOutput.innerHTML += `<li>${invitato}</li>`;
+            invitatiGenerati.push()
+        } else {
+            i--;
+        }
     }
 })
 
